@@ -15,21 +15,15 @@ async function weatherForecast() {
     console.log(result);
 
     document.querySelector("#weather-info-description").innerText = result.current.condition.text;
+    // Make function for below to return 'city, state', or if no state, 'city, region'
     document.querySelector("#weather-info-city").innerText = `${result.location.name}, ${result.location.region}`;
     
-    // TURN BELOW INTO FUNCTION
-    // const currentDate = result.location.localtime.toString().slice(5,10) + "-" + result.location.localtime.toString().slice(0,4);
-    // document.querySelector("#weather-info-date").innerText = currentDate;
-    // USE FUNCTION ABOVE
+    document.querySelector("#weather-info-date").innerText = result.location.localtime.toString().slice(5,10) + "-" + result.location.localtime.toString().slice(0,4);
     
-    // TURN BELOW INTO FUNCTION
-    // const currentTime = result.location.localtime.toString().slice(11,16);
-    // const timeTo12Hour = formatTime(currentTime);
-    // document.querySelector("#weather-info-time").innerText = timeTo12Hour;
-    // USE FUNCTION ABOVE
-
+    const currentTime = result.location.localtime.toString().slice(11,16);
+    document.querySelector("#weather-info-time").innerText = formatTime(currentTime);
     document.querySelector("#weather-info-temp").innerText = Math.round(result.current.temp_f) + tempMeasurement;
-    // document.querySelector("#weather-info-icon").src = getWeatherIcon(result.current.condition.icon);
+    document.querySelector("#weather-info-icon").src = getWeatherIcon(result.current.condition.icon);
     document.querySelector("#feels-like-temp").innerText = Math.round(result.current.feelslike_f) + tempMeasurement;
     document.querySelector("#humidity-percent").innerText = `${result.current.humidity}%`;
     document.querySelector("#chance-rain-percent").innerText = `${result.forecast.forecastday[0].day.daily_chance_of_rain}%`;
@@ -43,6 +37,26 @@ async function weatherForecast() {
   };
 }
 
+function formatTime(timeString) {
+  const [hourString, minute] = timeString.split(":");
+  const hour = +hourString % 24;
+  return (hour % 12 || 12) + ":" + minute + (hour < 12 ? "AM" : "PM");
+}
+
+function getWeatherIcon(iconUrl) {
+  const relativePath = iconUrl.slice(20,);
+  console.log(relativePath)
+  return `./images${relativePath}`;
+}
+
+
+// Allows 'Enter' key to search location
+document.querySelector("#location-input").addEventListener("keypress", (e) => {
+  if (e.key == "Enter") {
+    weatherForecast();
+  };
+})
+
 document.addEventListener("DOMContentLoaded", () => {
   weatherForecast();
-});
+})
