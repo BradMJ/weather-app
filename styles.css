@@ -1,0 +1,138 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* white-space: nowrap; */
+}
+
+body {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(./images/nature-background.jpg);
+  background-size: cover;
+  /* background-repeat: no-repeat; */
+  background-position: center;
+  color: white;
+  font-family: sans-serif;
+  font-weight: 900;
+  min-height: 100vh;
+  /* min-width: 655px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  padding: 1rem;
+  max-width: max-content;
+  height: min-content;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.default-icon {
+  height: 45px;
+}
+
+.weather-search-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.search-box {
+  border-bottom: 2px solid white;
+  display: flex;
+  flex-direction: row;
+}
+
+.search-icon {
+  height: 30px;
+}
+
+.location-input {
+  color: white;
+  background: none;
+  border: none;
+}
+
+.location-input:focus {
+  outline: none;
+}
+
+.location-input::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+.location-search-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.current-weather-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.current-weather {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.weather-section {
+  max-width: 50%;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.weather-info {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.weather-details-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.forecast-weather-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.forecast {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.forecast-info {
+  padding: 0.5rem;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  font-size: 0.8rem;
+}
