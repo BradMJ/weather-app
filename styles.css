@@ -24,7 +24,7 @@ body {
 }
 
 .container {
-  padding: 1rem;
+  padding: 0.5rem;
   max-width: max-content;
   height: min-content;
   background-color: rgba(0, 0, 0, 0.4);
@@ -109,6 +109,10 @@ body {
   align-items: center;
 }
 
+.weather-info p {
+  white-space: nowrap;
+}
+
 .weather-details-info {
   display: flex;
   flex-direction: column;
@@ -125,6 +129,10 @@ body {
   justify-content: space-evenly;
 }
 
+.forecast-day {
+  white-space: nowrap;
+}
+
 .forecast-info {
   padding: 0.5rem;
 }
@@ -136,7 +144,6 @@ body {
   left: 50%;
   transform: translate(-50%, 0);
   font-size: 0.8rem;
-  white-space: nowrap;
 }
 
 .link {
@@ -149,4 +156,51 @@ body {
   text-decoration: none;
   color: white;
   border-bottom: 1px solid white;
+}
+
+@media screen and (max-height: 720px) {
+  .footer {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .forecast {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .forecast-day {
+    border-bottom: 1px dashed white;
+    align-items: center;
+  }
+  
+  .footer {
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .current-weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .weather-section {
+    max-width: none;
+    text-align: center;
+    align-items: center;
+  }
+
+  .footer-p {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
