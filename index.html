@@ -14,7 +14,7 @@
       <div class="search-box">
         <input type="text" id="location-input" class="location-input" placeholder="Search Location...">
         <button type="submit" id="location-search-btn" class="location-search-btn">
-          <img src="./images/icons/search.png" alt="search-icon">
+          <img src="./images/icons/search.png" alt="search-icon" class="search-icon">
         </button>
       </div>
     </div>
@@ -23,38 +23,41 @@
         <h1 class="title">Currently</h1>
       </div>
       <div class="current-weather">
-        <div class="current-day weather-info weather-section">
-          <div id="weather-info-description" class="weather-info-description"></div>
-          <div id="weather-info-city" class="weather-info-city"></div>
-          <div id="weather-info-date" class="weather-info-date"></div>
-          <div id="weather-info-time" class="weather-info-time"></div>
-          <div id="weather-info-temp" class="weather-info-temp"></div>
-          <div id="weather-info-icon" class="weather-info-icon"></div>
+        <div class="weather-section">
+          <div id="weather-info-city" class="weather-info"></div>
+          <div id="weather-info-description" class="weather-info"></div>
+          <!-- <div id="weather-info-city" class="weather-info"></div> -->
+          <div id="weather-info-date" class="weather-info"></div>
+          <div id="weather-info-time" class="weather-info"></div>
+          <div id="weather-info-temp" class="weather-info"></div>
+          <div>
+            <img src="" alt="weather-condition-icon" id="weather-info-icon" class="weather-icon">
+          </div>
         </div>
-        <div class="current-day weather-details weather-section">
-          <div class="weather-details-feels-like">
-            <img src="./images/icons/temp.png" alt="temp-icon">
+        <div class="weather-section">
+          <div class="weather-info">
+            <img src="./images/icons/temp.png" alt="temp-icon" class="default-icon">
             <div class="weather-details-info">
               <p class="weather-details-text">Feels Like</p>
               <p id="feels-like-temp"></p>
             </div>
           </div>
-          <div class="weather-details-humidity">
-            <img src="./images/icons/humidity.png" alt="humidity-icon">
+          <div class="weather-info">
+            <img src="./images/icons/humidity.png" alt="humidity-icon" class="default-icon">
             <div class="weather-details-info">
               <p class="weather-details-text">Humidity</p>
               <p id="humidity-percent"></p>
             </div>
           </div>
-          <div class="weather-details-chance-rain">
-            <img src="./images/icons/chance-rain.png" alt="chance-rain-icon">
+          <div class="weather-info">
+            <img src="./images/icons/chance-rain.png" alt="chance-rain-icon" class="default-icon">
             <div class="weather-details-info">
-              <p class="weather-details-text">Chance of Rain</p>
+              <p class="weather-details-text">Rain Chance</p>
               <p id="chance-rain-percent"></p>
             </div>
           </div>
-          <div class="weather-details-wind-speed">
-            <img src="./images/icons/wind.png" alt="wind-icon">
+          <div class="weather-info">
+            <img src="./images/icons/wind.png" alt="wind-icon" class="default-icon">
             <div class="weather-details-info">
               <p class="weather-details-text">Wind Speed</p>
               <p id="wind-speed"></p>
@@ -69,39 +72,39 @@
       </div>
       <div class="forecast">
         <div class="day-one-forecast forecast-day weather-section">
-          <div id="day-one-forecast-date" class="forecast-date"></div>
+          <div id="day-one-forecast-date" class="forecast-info"></div>
           <div>
             <img id="day-one-forecast-icon" class="forecast-icon" src="" alt="forecast-icon">
           </div>
-          <div id="day-one-forecast-description" class="forecast-description"></div>
-          <div id="day-one-forecast-high" class="forecast-high"></div>
-          <div id="day-one-forecast-low" class="forecast-low"></div>
-          <div id="day-one-forecast-chance-rain" class="forecast-chance-rain"></div>
+          <div id="day-one-forecast-description" class="forecast-info"></div>
+          <div id="day-one-forecast-high" class="forecast-info"></div>
+          <div id="day-one-forecast-low" class="forecast-info"></div>
+          <div id="day-one-forecast-chance-rain" class="forecast-info"></div>
         </div>
         <div class="day-two-forecast forecast-day weather-section">
-          <div id="day-two-forecast-date" class="forecast-date"></div>
+          <div id="day-two-forecast-date" class="forecast-info"></div>
           <div>
             <img id="day-two-forecast-icon" class="forecast-icon" src="" alt="forecast-icon">
           </div>
-          <div id="day-two-forecast-description" class="forecast-description"></div>
-          <div id="day-two-forecast-high" class="forecast-high"></div>
-          <div id="day-two-forecast-low" class="forecast-low"></div>
-          <div id="day-two-forecast-chance-rain" class="forecast-chance-rain"></div>
+          <div id="day-two-forecast-description" class="forecast-info"></div>
+          <div id="day-two-forecast-high" class="forecast-info"></div>
+          <div id="day-two-forecast-low" class="forecast-info"></div>
+          <div id="day-two-forecast-chance-rain" class="forecast-info"></div>
         </div>
         <div class="day-three-forecast forecast-day weather-section">
-          <div id="day-three-forecast-date" class="forecast-date"></div>
+          <div id="day-three-forecast-date" class="forecast-info"></div>
           <div>
             <img id="day-three-forecast-icon" class="forecast-icon" src="" alt="forecast-icon">
           </div>
-          <div id="day-three-forecast-description" class="forecast-description"></div>
-          <div id="day-three-forecast-high" class="forecast-high"></div>
-          <div id="day-three-forecast-low" class="forecast-low"></div>
-          <div id="day-three-forecast-chance-rain" class="forecast-chance-rain"></div>
+          <div id="day-three-forecast-description" class="forecast-info"></div>
+          <div id="day-three-forecast-high" class="forecast-info"></div>
+          <div id="day-three-forecast-low" class="forecast-info"></div>
+          <div id="day-three-forecast-chance-rain" class="forecast-info"></div>
         </div>
       </div>
     </div>
     <footer class="footer">
-      <p class="footer-p">Copyright © BradMJ <script>document.write(new Date().getFullYear())</script> | Powered by <a href="https://www.weatherapi.com/" title="Free Weather API" class="link">WeatherAPI.com</a></p>
+      <p class="footer-p">Copyright © BradMJ <script>document.write(new Date().getFullYear())</script> | <a href="https://www.weatherapi.com/" title="Free Weather API" class="link">WeatherAPI.com</a></p>
     </footer>
   </div>
 </body>
