@@ -1,19 +1,17 @@
 async function weatherForecast() {
   try {
     const key = "c66e6fe4ffc3496a843151235243103";
-    let tempMeasurement = "°F";
-    let windMeasurement = "mph";
     let location = document.querySelector("#location-input").value;
     if (!location) {location = "Los Angeles"};
 
-    const response = await fetch(`http://api.weatherapi.com/v1/forecast.json?key=${key}&q=${location}&days=3&aqi=no&alerts=no`, {
+    const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${location}&days=3&aqi=no&alerts=no`, {
       mode: "cors"
     });
 
     const result = await response.json();
 
-    console.log(result);
-
+    let tempMeasurement = "°F";
+    let windMeasurement = "mph";
     let city = result.location.name;
     let region = result.location.region;
     let country = result.location.country;
