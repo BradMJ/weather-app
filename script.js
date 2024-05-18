@@ -38,21 +38,21 @@ async function weatherForecast() {
     document.querySelector("#day-one-forecast-icon").src = getWeatherIcon(result.forecast.forecastday[0].day.condition.icon);
     document.querySelector("#day-one-forecast-description").innerText = result.forecast.forecastday[0].day.condition.text;
     document.querySelector("#day-one-forecast-high").innerText = "High: " + Math.round(result.forecast.forecastday[0].day.maxtemp_f) + tempMeasurement;
-    document.querySelector("#day-one-forecast-low").innerText = "Low: " + Math.round(result.forecast.forecastday[0].day.maxtemp_f) + tempMeasurement;
+    document.querySelector("#day-one-forecast-low").innerText = "Low: " + Math.round(result.forecast.forecastday[0].day.mintemp_f) + tempMeasurement;
     document.querySelector("#day-one-forecast-chance-rain").innerText = `Rain Chance: ${result.forecast.forecastday[0].day.daily_chance_of_rain}%`;
 
     document.querySelector("#day-two-forecast-date").innerText = result.forecast.forecastday[1].date.slice(5,10) + "-" + result.forecast.forecastday[1].date.slice(0,4);
     document.querySelector("#day-two-forecast-icon").src = getWeatherIcon(result.forecast.forecastday[1].day.condition.icon);
     document.querySelector("#day-two-forecast-description").innerText = result.forecast.forecastday[1].day.condition.text;
     document.querySelector("#day-two-forecast-high").innerText = "High: " + Math.round(result.forecast.forecastday[1].day.maxtemp_f) + tempMeasurement;
-    document.querySelector("#day-two-forecast-low").innerText = "Low: " + Math.round(result.forecast.forecastday[1].day.maxtemp_f) + tempMeasurement;
+    document.querySelector("#day-two-forecast-low").innerText = "Low: " + Math.round(result.forecast.forecastday[1].day.mintemp_f) + tempMeasurement;
     document.querySelector("#day-two-forecast-chance-rain").innerText = `Rain Chance: ${result.forecast.forecastday[1].day.daily_chance_of_rain}%`;
 
     document.querySelector("#day-three-forecast-date").innerText = result.forecast.forecastday[2].date.slice(5,10) + "-" + result.forecast.forecastday[2].date.slice(0,4);
     document.querySelector("#day-three-forecast-icon").src = getWeatherIcon(result.forecast.forecastday[2].day.condition.icon);
     document.querySelector("#day-three-forecast-description").innerText = result.forecast.forecastday[2].day.condition.text;
     document.querySelector("#day-three-forecast-high").innerText = "High: " + Math.round(result.forecast.forecastday[2].day.maxtemp_f) + tempMeasurement;
-    document.querySelector("#day-three-forecast-low").innerText = "Low: " + Math.round(result.forecast.forecastday[2].day.maxtemp_f) + tempMeasurement;
+    document.querySelector("#day-three-forecast-low").innerText = "Low: " + Math.round(result.forecast.forecastday[2].day.mintemp_f) + tempMeasurement;
     document.querySelector("#day-three-forecast-chance-rain").innerText = `Rain Chance: ${result.forecast.forecastday[2].day.daily_chance_of_rain}%`;
 
   } catch (err) {
